@@ -1,17 +1,17 @@
 import streamlit as st
-from Pages import Home, Project1, Project2, Project3
-from streamlit_navigation_bar import st_navbar
-import os
+
 from PIL import Image
-import pandas as pd
-import numpy as np
-
-
 image = Image.open('img/barca.png')
 st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
+from Pages import Home, Project1, Project2, Project3
+from streamlit_navigation_bar import st_navbar
+import os
+import pandas as pd
+import numpy as np
+
 logo_path = os.path.join(os.path.dirname(__file__), "img", "barca.svg")
-pages = [" ",'Home','Project1', 'Project2', 'Project3']
+pages = [" ", 'Home', 'Project1', 'Project2', 'Project3']
 
 styles = {
     "nav": {
@@ -33,13 +33,11 @@ styles = {
         "padding": "0.2rem 0.725rem",
         "font-size": "14px"
     },
-
     "active": {
         "background-color": "white",
         "color": "black",
         "font-weight": "normal",
         "padding": "14px",
-
     }
 }
 
@@ -48,10 +46,7 @@ options = {
     "show_sidebar": True,
 }
 
-page = st_navbar(pages,
-    styles=styles,
-    logo_path=logo_path,
-    options=options)
+page = st_navbar(pages, styles=styles, logo_path=logo_path, options=options)
 
 if page == 'Home':
     Home.Home().app()
