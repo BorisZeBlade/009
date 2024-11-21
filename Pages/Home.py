@@ -5,3 +5,4 @@ class Home:
         pass
     def app(self):
         st.write('Home')
+
