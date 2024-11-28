@@ -4,6 +4,7 @@ import numpy as np
   # Декоратор для кэширования
 
 class Project1:
+
     def __init__(self):
         pass
     def app(self):
